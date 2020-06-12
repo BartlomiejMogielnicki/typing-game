@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    min-height: 100vh;
+    background-color: #6C733D;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+}
+
+button {
+    border: none;
+    border-radius: 5px;
+    padding: 5px 15px;
+    cursor: pointer;
+}
+
+.btn-settings {
+    position: absolute;
+    left: 30px;
+    bottom: 30px;
+}
+
+input:focus,
+button:focus,
+select:focus {
+    outline: 0;
+}
+
+.settings-container {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px;
+    background-color: rgba(0, 0, 0, .3);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: .3s;
+}
+
+.settings-container.hide {
+    transform: translateY(-100%);
+}
+
+.difficulty {
+    padding: 5px 30px 5px 5px;
+    margin-left: 15px;
+    text-align: left;
+    cursor: pointer;
+    background-color: #9DA65D;
+    border-radius: 5px;
+}
+
+.game-container {
+    width: 500px;
+    background-color: #202426;
+    text-align: center;
+    padding: 15px;
+    position: relative;
+    border-radius: 10px;
+}
+
+h2 {
+    margin: 10px 10px 50px 10px;
+    padding: 5px;
+    background-color: #9DA65D;
+    border-radius: 5px;
+}
+
+input {
+    padding: 10px 50px 10px 10px;
+    margin: 15px;
+    font-size: 1em;
+    border-radius: 5px;
+}
+
+.time-container {
+    position: absolute;
+    top: 80px;
+    left: 30px;
+}
+
+.score-container {
+    position: absolute;
+    top: 80px;
+    right: 30px;
+}
