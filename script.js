@@ -8,7 +8,7 @@ const wordEl = document.getElementById('word');
 const inputWordEl = document.getElementById('text');
 const timeEl = document.getElementById('time');
 const scoreEl = document.getElementById('score');
-
+const summaryScreen = document.getElementById('summary-container')
 // Words array
 const words = ['one', 'two', 'three', 'four', 'five', 'six'];
 
@@ -22,7 +22,13 @@ inputWordEl.focus();
 
 // Game over
 const gameOver = () => {
+    summaryScreen.innerHTML = `
+    <h2>Time ran out!</h2>
+    <p>Your score is ${score}.</p>
+    <button onclick="window.location.reload()">Restart</button>
+    `;
 
+    summaryScreen.style.display = "flex";
 }
 
 // Time countdown
