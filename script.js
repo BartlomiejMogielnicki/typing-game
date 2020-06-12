@@ -16,6 +16,10 @@ const words = ['one', 'two', 'three', 'four', 'five', 'six'];
 let time = 10;
 let score = 0
 let word = '';
+let difficulty = localStorage.getItem('difficulty') !== null ? localStorage.getItem('difficulty') : 'medium';
+
+// Set difficulty start value
+selectDifficulty.value = difficulty;
 
 // Focus input automatically
 inputWordEl.focus();
@@ -65,6 +69,14 @@ const correctWord = () => {
     updateScore();
     randomWord();
     inputWordEl.value = '';
+
+    if (difficulty === 'easy') {
+        time += 5
+    } else if (difficulty === 'medium') {
+        time += 3;
+    } else {
+        time += 1;
+    }
 }
 
 // Check input word
@@ -81,4 +93,12 @@ inputWordEl.addEventListener('input', checkInput);
 // Hide and show settings-container
 settingsBtn.addEventListener('click', () => {
     settingsContainer.classList.toggle('hide');
+})
+
+// Select difficulty change
+selectDifficulty.addEventListener('change', (e) => {
+    difficulty = e.target.value;
+
+    // Set difficulty to local storage
+    localStorage.setItem('difficulty', difficulty);
 })
